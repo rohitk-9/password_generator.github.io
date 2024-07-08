@@ -54,14 +54,11 @@ export default function Passwd() {
     setText(password)
     scrollToBottom()
   }
-
   const myTextarea = document.querySelector('#history_area');
   function scrollToBottom() {
     if (myTextarea)
       myTextarea.scrollTop = myTextarea.scrollHeight;
   }
-
-  // console.log(sliderval)
   
   return (
     <div>
@@ -74,6 +71,7 @@ export default function Passwd() {
         </div>
         <input id="submit-btn" type="submit" onClick={generate_passwd} value="Generate password" /> 
         <Slider defaultValue={8} />
+
       </div>
     </div>  
   );

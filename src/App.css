@@ -85,10 +85,10 @@ header{
       height: 1cm;
       color: white;
     } 
-    .checkbox{
+    /* .checkbox{
       display: grid; 
       grid-template-columns: 1fr 1fr;   
-    }
+    } */
     #history_area, #password {
       font-size: 16px;
       color: white; 
@@ -109,3 +109,6 @@ header{
   @media (width < 550px){header{font-size: 2em;}} 
   @media (width < 450px){header{font-size: 1.6em;}} 
   @media (width < 350px){header{font-size: 1.4em;}} 
+  [type="checkbox"]:not(:checked) {
+    color: red;
+  }
