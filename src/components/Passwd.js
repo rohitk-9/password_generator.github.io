@@ -3,9 +3,10 @@ import Copybtn from './Copybtn';
 import Slider, {sliderval} from './Slider';
 
 export default function Passwd() {
-  const [new_passwd, setText] = useState('Test password');
+  const [new_passwd, setText] = useState('');
+  const [historyValue, updateHistoryState] = useState('History\n');
   const handleNewPasswdOnChange = (event) => {
-    setText(event.target.value)
+    setText(event.target.value);
   }
   function generate_char(character){
     switch (character){
@@ -45,21 +46,28 @@ export default function Passwd() {
     } 
     return password
   }
-
   function generate_passwd(){
     let arr1 = [0,1,2,3];
     let length=sliderval;
     let password = password_call(arr1, length);
+    updateHistoryState(historyValue+password+"\n");
     setText(password)
-
+    scrollToBottom()
   }
-  console.log(sliderval)
+
+  const myTextarea = document.querySelector('#history_area');
+  function scrollToBottom() {
+    if (myTextarea)
+      myTextarea.scrollTop = myTextarea.scrollHeight;
+  }
+
+  // console.log(sliderval)
   
   return (
     <div>
       <header>Password Generator</header><br/>
       <div className="main-section">
-        <textarea id="history_area" defaultValue={'History'} readOnly></textarea> 
+        <textarea id="history_area" value={historyValue}  readOnly></textarea> 
         <div className="password_ce">
           <input type="text" id="password" value={new_passwd} onChange={handleNewPasswdOnChange}/>
           <Copybtn btntext = "Copy password" textToCopy ={new_passwd} />
