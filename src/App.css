@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+:root { 
+  --dark-bg-color: #01050c;
+  --dark-primary: #115288;
+  --dark-secondary: #092c49;
+  --dark-accent: #3798e6;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{ 
+  font-family: system-ui;
+  color: white; 
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#history_area{
+  padding: 5px 10px;  
+  outline: transparent; 
+  resize: none; 
+}
+.password_ce{ 
+      display: flex;
+      justify-content: space-between; 
+}
+#password{
+  outline: transparent; 
+  color: white; 
+}
+body {
+    background-color: var(--dark-bg-color);  
+}
+header{
+    color: var(--dark-accent);  
+}
+  #history_area{
+    background-color: #0d151c;
+    border-color: white;  
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #password{
+    background-color: var(--dark-primary);
+    border: none; 
   }
-  to {
-    transform: rotate(360deg);
+  #copy-btn{
+    background-color: var(--dark-secondary);
+    border: none;
   }
-}
+  #copy-btn:hover{
+    border: 1px solid var(--dark-primary);
+  }
+  #submit-btn{
+    background-color: var(--dark-secondary); 
+    border: none;
+  }
+  #submit-btn:hover{
+    border: 1px solid var(--dark-primary); 
+  }
+  body{
+    max-width: 20cm; 
+    margin: 0 auto;  
+  }
+    label {  
+        margin-bottom: 10px;
+        width: 90%; 
+    }
+    header{ 
+      text-align: center;
+      font-size: 3em;
+      margin-block: 22px; 
+    } 
+    .main-section{
+      display: grid;
+      margin: 0 auto;   
+      width: 90%;  
+    }
+    #history_area {
+      height: 200px;         
+    }  
+    #password{
+      height: 1cm; 
+      min-width: 50%;  
+      width: 100%;    
+      margin-right: 10px; 
+      padding: 0 10px; 
+    }
+    #copy-btn{
+      width: 34%;
+      color: white; 
+    }
+    #submit-btn{ 
+      height: 1cm;
+      color: white;
+    } 
+    .checkbox{
+      display: grid; 
+      grid-template-columns: 1fr 1fr;   
+    }
+    #history_area, #password {
+      font-size: 16px;
+      color: white; 
+    }
+    #password_length input[type="range"] {
+      width: 100%; 
+      margin-bottom: 10px;
+    }
+    #password_length,
+    .password_ce,
+    #submit-btn {
+      margin-top: 10px; 
+    }
+    #history_area, #password, #copy-btn, #submit-btn{ 
+    border-radius: 10px;  
+  }
+  @media (width < 700px){header{font-size: 2.5em;}}
+  @media (width < 550px){header{font-size: 2em;}} 
+  @media (width < 450px){header{font-size: 1.6em;}} 
+  @media (width < 350px){header{font-size: 1.4em;}} 
